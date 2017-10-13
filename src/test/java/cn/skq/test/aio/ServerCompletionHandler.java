@@ -9,11 +9,11 @@ import java.nio.channels.CompletionHandler;
 public class ServerCompletionHandler implements CompletionHandler<AsynchronousSocketChannel, Server> {
     @Override
     public void completed(AsynchronousSocketChannel result, Server attachment) {
-
+        //TODO
     }
 
     @Override
     public void failed(Throwable exc, Server attachment) {
-
+        //TODO
     }
 }
