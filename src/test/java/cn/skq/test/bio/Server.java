@@ -11,12 +11,9 @@ import java.net.Socket;
  */
 public class Server {
 
-    private static final int PORT = 6677;
-    private static final String ADDRESS = "127.0.0.1";
-
     public static void main(String[] args) {
         try {
-            ServerSocket ss = new ServerSocket(PORT);
+            ServerSocket ss = new ServerSocket(6677);
             System.out.println("启动Server端。。");
             Socket socket = ss.accept();
             System.out.println("Client端已连接。。");

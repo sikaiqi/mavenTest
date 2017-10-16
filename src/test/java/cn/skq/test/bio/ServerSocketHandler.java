@@ -22,11 +22,12 @@ public class ServerSocketHandler implements Runnable{
             in = new InputStreamReader(socket.getInputStream());
             out = new OutputStreamWriter(socket.getOutputStream());
 
-            while (in.read()!=-1){
-                in.read();
-
+            char[] b =new char[1024];
+            int len = 0;
+            while ((len = in.read(b))!=-1){
+                String str = new String(b);
+                System.out.println(str);
             }
-
 
         } catch (IOException e) {
             e.printStackTrace();
