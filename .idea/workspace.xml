@@ -4,28 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/src/test/java/cn/skq/test/Lock/ReentrantLockTest4.java" line="37" mnemonic="9" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="30b12ed4-8adf-4b29-b25f-f00e64292fdd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/markdown-test.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/cn/skq/test/Lock/ReentrantLockTest1.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/cn/skq/test/Lock/ReentrantLockTest2.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/cn/skq/test/Lock/ReentrantLockTest3.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/cn/skq/test/Lock/ReentrantLockTest4.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/cn/skq/test/Lock/ReentrantLockTest5.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/cn/skq/test/cache/GuavaDemo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/cn/skq/test/factoryMode/Hair.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/cn/skq/test/factoryMode/LeftHair.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/cn/skq/test/guava/GuavaTester.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/cn/skq/test/io/IOTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/cn/skq/test/Netty/Client$1.class" afterPath="$PROJECT_DIR$/target/test-classes/cn/skq/test/Netty/Client$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/cn/skq/test/Netty/Client.class" afterPath="$PROJECT_DIR$/target/test-classes/cn/skq/test/Netty/Client.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/cn/skq/test/bio/ServerSocketHandler.class" afterPath="$PROJECT_DIR$/target/test-classes/cn/skq/test/bio/ServerSocketHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/mavenTest_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/mavenTest_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mavenTest.iml" afterPath="$PROJECT_DIR$/mavenTest.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/cn/skq/test/bio/Client.java" afterPath="$PROJECT_DIR$/src/test/java/cn/skq/test/bio/Client.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/cn/skq/test/bio/ServerSocketHandler.java" afterPath="$PROJECT_DIR$/src/test/java/cn/skq/test/bio/ServerSocketHandler.java" />
-    </list>
+    <list default="true" id="30b12ed4-8adf-4b29-b25f-f00e64292fdd" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -228,7 +207,33 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="target" />
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mavenTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mavenTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -902,7 +907,7 @@
       <workItem from="1513502507668" duration="910000" />
       <workItem from="1514894043523" duration="2282000" />
       <workItem from="1516278662608" duration="132000" />
-      <workItem from="1516885257325" duration="5355000" />
+      <workItem from="1516885257325" duration="6431000" />
     </task>
     <task id="LOCAL-00001" summary="修改">
       <created>1507816822800</created>
@@ -929,7 +934,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57793000" />
+    <option name="totallyTimeSpent" value="58869000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
