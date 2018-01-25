@@ -14,7 +14,6 @@ public class ServerSocketHandler implements Runnable{
         this.socket = socket;
     }
 
-    @Override
     public void run() {
         InputStreamReader in = null;
         OutputStreamWriter out = null;
@@ -24,9 +23,12 @@ public class ServerSocketHandler implements Runnable{
 
             char[] b =new char[1024];
             int len = 0;
+            int s = in.read(b);
+            System.out.println("ss"+s);
             while ((len = in.read(b))!=-1){
-                String str = new String(b);
-                System.out.println(str);
+//                System.out.println("111");
+//                String str = new String(b);
+//                System.out.println(str);
             }
 
         } catch (IOException e) {
