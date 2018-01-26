@@ -1,10 +1,9 @@
-package cn.skq.test.lamda;
-
-import com.google.common.cache.Weigher;
+package cn.skq.test.lambda;
 
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -16,17 +15,18 @@ public class LambdaTest1 {
 
     public static void main(String[] args) {
         //testSimple();
+        testSimple2();
         //testStream();
         //testStreamSort();
         //testStreamMap();
         //testStreamMatch();
-        testStreamCollect();
+        //testStreamCollect();
 
 
     }
 
     public static void testStreamCollect() {
-        List<String> list = new ArrayList<>();
+        List<String> list = new ArrayList<String>();
         list.add("a2");
         list.add("a1");
         list.add("b1");
@@ -118,10 +118,49 @@ public class LambdaTest1 {
         list.stream().filter(p1).filter(p2).forEach(System.out::println);
     }
 
+    public static void testSimple2() {
+         //Supplier supplier = (param) -> Integer.valueOf(param);
+
+       /* new Thread(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("开启线程");
+            }
+        }).start();*/
+       // new Thread(() -> System.out.println("开启线程")).start();
+
+        /*Converter<String,Integer> converter = new Converter<String,Integer>(){
+            @Override
+            public Integer convert(String f) {
+                return Integer.valueOf(f);
+            }
+        };
+
+        Integer i = converter.convert("201");
+        System.out.println(i);*/
+
+        Converter<String,Integer> converter = Integer::valueOf;
+        Integer i = converter.convert("3333");
+        System.out.println(i);
+
+    }
+
     public static void testSimple(){
-        //()->10
-        // (int x, int y) -> x + y;
-        //(String name) -> System.out.println(name);
+       /* //示例1：不需要接受参数，直接返回10
+        ()->10
+        //示例2：接受两个int类型的参数，并返回这2个参数相加的和
+        (int x, int y) -> x + y;
+        //示例3：接受x,y 2个参数，参数的类型由JVM根据上下文推断出来，并返回这2个参数相加的和
+        (x,y) -> x+y;
+        //示例4：接受一个字符串，并将字符串打印到控制台，不返回结果
+        (String name) -> System.out.println(name);
+        //示例5：接受一个推断类型的参数，并将字符串打印到控制台，不返回结果
+        name -> System.out.println(name);
+        //示例6：接受2个String类型的参数，分别打印到控制台，不返回结果
+        (String name,String sex) -> {System.out.println(name);System.out.println(sex)}
+        //示例6：接受一个参数，返回该参数的2倍
+        x -> 2*x;*/
+
 
         Function<String, Integer> stringIntegerFunction = Integer::valueOf;
         Function<String, String> stringStringFunction = stringIntegerFunction.andThen(String::valueOf);
@@ -140,7 +179,11 @@ public class LambdaTest1 {
 
         Integer res = zero.apply(4);
         System.out.println(res);
+
     }
 
+    interface Converter<F,T>{
+        T convert(String F);
+    }
 
 }
