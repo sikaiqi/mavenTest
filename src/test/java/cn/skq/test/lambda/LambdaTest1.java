@@ -1,12 +1,12 @@
 package cn.skq.test.lambda;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * Created by admin on 2018/1/25.
@@ -15,13 +15,78 @@ public class LambdaTest1 {
 
     public static void main(String[] args) {
         //testSimple();
-        testSimple2();
+        //testSimple2();
         //testStream();
         //testStreamSort();
         //testStreamMap();
         //testStreamMatch();
         //testStreamCollect();
+        //testStreamCount();
+        //testStreamReduce();
+        //testParallelStream();
+        testLazyStream();
 
+    }
+
+    public static void testLazyStream() {
+        Stream<Long> stream = Stream.generate(new NatureSeq());
+        System.out.println("元素个数："+stream.map((param)->{
+            return param;
+        }).limit(1000).count());
+    }
+
+    public static void testParallelStream() {
+        List<String> bigList = new ArrayList<>();
+        for (int i = 0 ; i < 10000; i++){
+            UUID uuid = UUID.randomUUID();
+            bigList.add(uuid.toString());
+        }
+
+        //测试串行流下排序所用的时间
+        /*long startTime = System.nanoTime();
+        bigList.stream().sorted();
+        long endTime = System.nanoTime();
+        long cost = TimeUnit.NANOSECONDS.toMillis(endTime-startTime);
+        System.out.println("花费毫秒数："+cost); //113毫秒*/
+
+        //测试并行流下排序所用的时间
+        long startTime = System.nanoTime();
+        bigList.parallelStream().sorted();
+        long endTime = System.nanoTime();
+        long cost = TimeUnit.NANOSECONDS.toMillis(endTime-startTime);
+        System.out.println("花费毫秒数："+cost); //10毫秒
+
+    }
+
+    public static void testStreamReduce() {
+        List<String> list = new ArrayList<String>();
+        list.add("a2");
+        list.add("a1");
+        list.add("b1");
+        list.add("b2");
+        list.add("b3");
+        list.add("c1");
+        list.add("a3");
+
+        Optional<String> optional = list.stream().sorted().reduce((s1, s2) -> {
+            System.out.println(s1 + "|" + s2);
+            return s1 + "|" + s2;
+        });
+
+    }
+
+    public static void testStreamCount(){
+        List<String> list = new ArrayList<String>();
+        list.add("a2");
+        list.add("a1");
+        list.add("b1");
+        list.add("b2");
+        list.add("b3");
+        list.add("c1");
+        list.add("a3");
+
+        long num = list.stream().filter((s)->s.startsWith("a")).count();
+        System.out.println(num);
 
     }
 
@@ -40,6 +105,7 @@ public class LambdaTest1 {
         List<String> newList = list.stream().sorted(c1).collect(Collectors.toList());
         newList.stream().forEach(System.out::println);
     }
+
 
     public static void testStreamMatch() {
         List<String> list = new ArrayList<>();
@@ -119,7 +185,9 @@ public class LambdaTest1 {
     }
 
     public static void testSimple2() {
-         //Supplier supplier = (param) -> Integer.valueOf(param);
+        Supplier<String> supplier = () -> "2222";
+        String res = supplier.get();
+        System.out.println(res);
 
        /* new Thread(new Runnable() {
             @Override
@@ -139,9 +207,9 @@ public class LambdaTest1 {
         Integer i = converter.convert("201");
         System.out.println(i);*/
 
-        Converter<String,Integer> converter = Integer::valueOf;
+        /*Converter<String,Integer> converter = Integer::valueOf;
         Integer i = converter.convert("3333");
-        System.out.println(i);
+        System.out.println(i);*/
 
     }
 
@@ -184,6 +252,15 @@ public class LambdaTest1 {
 
     interface Converter<F,T>{
         T convert(String F);
+    }
+
+    static class NatureSeq implements Supplier<Long>{
+        private Long value = 0L;
+        @Override
+        public Long get() {
+            value ++;
+            return value;
+        }
     }
 
 }
