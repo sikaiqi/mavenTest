@@ -15,7 +15,7 @@ public class LambdaTest1 {
 
     public static void main(String[] args) {
         //testSimple();
-        //testSimple2();
+    	//testSimple2();
         //testStream();
         //testStreamSort();
         //testStreamMap();

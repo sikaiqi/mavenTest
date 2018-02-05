@@ -1,4 +1,4 @@
-package cn.skq.test.lamda;
+package cn.skq.test.lambda;
 
 import com.google.common.collect.Maps;
 
