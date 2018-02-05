@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * Created by Administrator on 2018/2/2 0002.
@@ -11,6 +13,7 @@ import java.net.Socket;
 public class Server2 {
 
     public static void main(String[] args) {
+        ExecutorService threadPool = Executors.newCachedThreadPool();//创建线程池
         ServerSocket ss = null;
         try {
             ss = new ServerSocket(6677);
@@ -18,7 +21,14 @@ public class Server2 {
             while(true){
                 Socket socket = ss.accept();
                 System.out.println("来了一个新客户端！");
-                hanle(socket);
+
+                //使用多线程解决传统BIO 下多客户端访问阻塞问题
+                threadPool.submit(new Runnable() {
+                    @Override
+                    public void run() {
+                        hanle(socket);
+                    }
+                });
             }
 
         } catch (IOException e) {
