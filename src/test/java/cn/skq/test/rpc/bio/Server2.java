@@ -1,4 +1,4 @@
-package cn.skq.test.bio;
+package cn.skq.test.rpc.bio;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -13,7 +13,9 @@ import java.util.concurrent.Executors;
 public class Server2 {
 
     public static void main(String[] args) {
+
         ExecutorService threadPool = Executors.newCachedThreadPool();//创建线程池
+
         ServerSocket ss = null;
         try {
             ss = new ServerSocket(6677);
@@ -23,6 +25,7 @@ public class Server2 {
                 System.out.println("来了一个新客户端！");
 
                 //使用多线程解决传统BIO 下多客户端访问阻塞问题
+
                 threadPool.submit(new Runnable() {
                     @Override
                     public void run() {

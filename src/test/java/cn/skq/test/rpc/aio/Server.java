@@ -1,4 +1,4 @@
-package cn.skq.test.aio;
+package cn.skq.test.rpc.aio;
 
 import java.net.InetSocketAddress;
 import java.nio.channels.AsynchronousChannelGroup;

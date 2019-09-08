@@ -1,4 +1,4 @@
-package cn.skq.test.bio;
+package cn.skq.test.rpc.bio;
 
 import java.io.*;
 import java.net.Socket;
